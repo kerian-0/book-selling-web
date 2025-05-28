@@ -17,6 +17,11 @@ public class UserController {
 
     private final UserService userService;
 
+    @GetMapping("/")
+    public String init(){
+        return "redirect:/login";
+    }
+
     @GetMapping("/register")
     public String register(Model model){
         model.addAttribute("user", new User());
