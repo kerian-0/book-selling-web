@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html th:replace="~{layout/masterLayout :: layout(~{::main})}" lang="en" xmlns:th="http://www.thymeleaf.org">
+<html th:replace="~{layout/userViewLayout :: layout(~{::main})}" lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <body>
 <main role="main">
@@ -11,7 +11,10 @@
                    <div class="card-body">
                        <h5 th:text="${book.authorName}"></h5>
                        <span th:text="${book.bookName}"></span>
-                       <a th:href="@{'/library/book-details?id='+${book.id}}">Details</a>
+                       <div>
+                           <a th:href="@{'/library/book-details?id='+${book.id}}" class="btn btn-secondary">Details</a>
+
+                       </div>
                    </div>
                </div>
            </div>

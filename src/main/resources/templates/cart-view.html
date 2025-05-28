@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html th:replace="~{layout/masterLayout ::layout(~{::main})}" lang="en" xmlns:th="http://www.thymeleaf.org">
+<html th:replace="~{layout/userViewLayout ::layout(~{::main})}" lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <body>
 <main role="main">
@@ -37,7 +37,7 @@
         </div>
         <div class="row">
             <div class="col-md-8"></div>
-            <div class="col-md-2"><a href="" class="btn btn-secondary">Checkout</a></div>
+            <div class="col-md-2"><a th:href="@{/library/order-success}" class="btn btn-secondary">Checkout</a></div>
         </div>
     </div>
 </main>

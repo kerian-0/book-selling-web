@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/userViewLayout ::layout(~{::main})}" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+    <div class="container mt-4">
+        <h4>Order Tables</h4>
+        <table class="table-bordered table-striped">
+            <thead>
+              <tr>
+                  <th>Id</th>
+                  <th>Username</th>
+                  <th>BookName</th>
+                  <th>OrderDate</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr th:each="b : ${bookOrders}">
+                <td th:text="${b.id}"></td>
+                <td th:text="${b.username}"></td>
+                <td th:text="${b.bookName}"></td>
+                <td th:text="${#temporals.format(b.date, 'yyyy-MM-dd')}"></td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>

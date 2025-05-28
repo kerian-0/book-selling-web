@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}">
+
 </head>
 <body>
 <div>
-    <h1>Hello How are you?</h1>
-    <a th:href="@{/library/view-cart}">
-        <span><i class="fa-solid fa-cart-shopping"></i> <span th:if="${!#lists.isEmpty(cartItem)}" class="mx-2" th:text="${cartItem.size()}"></span></span>
 
-    </a>
 </div>
 <div th:replace="${main}"></div>
 </body>

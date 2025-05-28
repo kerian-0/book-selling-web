@@ -1,11 +1,11 @@
 package org.example.booksellingweb.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -19,6 +19,14 @@ public class Book {
     private String description;
     private String imageUrl;
     private double price;
+@OneToMany(mappedBy = "book")
+    private List<BookUserOrder> bookUserOrders=new ArrayList<>();
+
+public void addBookUserOrder(BookUserOrder bookUserOrder) {
+    bookUserOrder.setBook(this);
+    bookUserOrders.add(bookUserOrder);
+
+}
 
     public Book(String bookName, String authorName, String description, String imageUrl, double price) {
         this.bookName = bookName;
