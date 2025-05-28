@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 
 import org.example.booksellingweb.entity.User;
 import org.example.booksellingweb.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,13 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequiredArgsConstructor
 public class UserController {
-
+    @Autowired
     private final UserService userService;
 
-    @GetMapping("/")
-    public String init(){
-        return "redirect:/login";
-    }
 
     @GetMapping("/register")
     public String register(Model model){
@@ -40,9 +37,6 @@ public class UserController {
     public String login( ){
         return "login";
     }
-    @GetMapping("/home")
-    public String home(){
-        return "home";
-    }
+
 
 }

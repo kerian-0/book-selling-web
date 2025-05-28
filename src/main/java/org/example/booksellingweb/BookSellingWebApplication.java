@@ -8,6 +8,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 
 import java.time.LocalDate;
 
@@ -20,6 +21,7 @@ public class BookSellingWebApplication {
     private BookDao bookDao;
 
     @Bean
+    @Profile("dev")
     public ApplicationRunner runner(){
         return r -> {
             Book b1 = new Book("Good Night Tokyo","ATSUHIRO YOSHIDA","Slice-of-Life","Goodnight Tokyo by Atsuhiro Yoshida is a lyrical novel set in Tokyo’s nocturnal hours, " +

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/userViewLayout :: layout(~{::main})}" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <main role="main">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4" th:each="bo : ${books}">
+                    <img class="card-img-top" th:src="@{'/images/' + ${books} + '.jpg'}" alt="image">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
