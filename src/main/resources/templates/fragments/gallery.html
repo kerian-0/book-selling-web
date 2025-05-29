@@ -16,9 +16,9 @@
         </div>
         <!--Gallery-->
         <div class="row">
-            <div class="col-md-4" th:each="book : ${books}">
-                <div class="card">
-                    <img class="card-img-top" th:src="@{'/images/books/' + ${book.imageUrl}}" alt="gallery">
+            <div class="col-md-4 " th:each="book : ${books}">
+                <div class="card mb-3 rounded-circle" style="width: 18rem">
+                    <img class="card-img-top rounded-circle shadow-lg" th:src="@{'/images/books/' + ${book.imageUrl}}" alt="gallery">
                 </div>
             </div>
         </div>

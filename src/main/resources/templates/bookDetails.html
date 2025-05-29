@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/userViewLayout :: layout(~{::main})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <main role="main">
+        <div class="container mt-5">
+            <div class="row align-items-center">
+                <div class="col-4">
+                    <div class="p-5 ">
+                        <img  th:src="@{'/images/books/'+${book.imageUrl}}"
+                             class="img-fluid rounded"
+                              style="height: 300px; object-fit: cover;"
+                             alt="image">
+
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="p-3">
+                        <h1 th:text="${book.title}" class="text-warning"></h1>
+                        <p class="lead" th:text="${book.description}"></p>
+                        <p class="lead" th:text="${book.releaseDate}"></p>
+                        <p class="lead" th:text="${'Author - '+book.author}"></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

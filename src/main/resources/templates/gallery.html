@@ -6,8 +6,16 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-4" th:each="bo : ${books}">
-                    <img class="card-img-top" th:src="@{'/images/' + ${books} + '.jpg'}" alt="image">
+                    <div class="card mb-3 " style="width: 18rem">
+                        <img class="card-img-top" th:src="@{'/images/books/' + ${bo.imageUrl}}" alt="image">
+                        <div class="card-body" >
+                            <a th:href="@{'/book/details?id='+${bo.id}}" class="btn btn-success my-2 w-100 ">Details</a>
+                        </div>
+                    </div>
+
+
                 </div>
+
             </div>
         </div>
     </main>
