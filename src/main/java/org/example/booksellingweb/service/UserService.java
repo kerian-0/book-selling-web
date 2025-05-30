@@ -1,8 +1,10 @@
 package org.example.booksellingweb.service;
 
 
+import org.example.booksellingweb.dao.BookDao;
 import org.example.booksellingweb.dao.RoleDao;
 import org.example.booksellingweb.dao.UserDao;
+import org.example.booksellingweb.entity.Book;
 import org.example.booksellingweb.entity.Role;
 import org.example.booksellingweb.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class UserService {
     private  PasswordEncoder passwordEncoder;
     @Autowired
     private RoleDao roleDao;
+    @Autowired
+    private BookDao bookDao;
 
     @Transactional
     public String register(User user){
@@ -42,4 +46,6 @@ public class UserService {
         }
         return "User registered successfully";
     }
+
+
 }

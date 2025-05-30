@@ -1,38 +1,37 @@
 package org.example.booksellingweb.entity;
 
-import jakarta.persistence.*;
-import lombok.Data;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
 
 @Entity
+@Getter
+@Setter
 @NoArgsConstructor
-@Data
 public class Book {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String bookName;
-    private String authorName;
+    private String title;
+    private String author;
+    private String genre;
     private String description;
+    private LocalDate releaseDate;
     private String imageUrl;
-    private double price;
-@OneToMany(mappedBy = "book")
-    private List<BookUserOrder> bookUserOrders=new ArrayList<>();
 
-public void addBookUserOrder(BookUserOrder bookUserOrder) {
-    bookUserOrder.setBook(this);
-    bookUserOrders.add(bookUserOrder);
-
-}
-
-    public Book(String bookName, String authorName, String description, String imageUrl, double price) {
-        this.bookName = bookName;
-        this.authorName = authorName;
+    public Book(String title, String author, String genre, String description, LocalDate releaseDate, String imageUrl) {
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
         this.description = description;
+        this.releaseDate = releaseDate;
         this.imageUrl = imageUrl;
-        this.price = price;
     }
 }

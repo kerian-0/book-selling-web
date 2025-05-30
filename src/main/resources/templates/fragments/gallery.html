@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section th:fragment="gallery"  id="gallery-1446">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Gallery</span>
+                <h2 class="cs-title">Our Photo Gallery</h2>
+            </div>
+        </div>
+        <!--Gallery-->
+        <div class="row">
+            <div class="col-md-4 " th:each="book : ${books}">
+                <div class="card mb-3 rounded-circle" style="width: 18rem">
+                    <img class="card-img-top rounded-circle shadow-lg" th:src="@{'/images/books/' + ${book.imageUrl}}" alt="gallery">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

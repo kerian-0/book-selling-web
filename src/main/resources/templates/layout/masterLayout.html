@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html th:fragment="layout(main)" lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" th:fragment="layout(main)"   xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}">
-
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"
+        th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="../../static/bootstrap/css/App.css"
+        th:href="@{/bootstrap/css/App.css}">
 </head>
 <body>
-<div>
+    <div th:replace="~{/fragments/navbar.html :: navbar}"></div>
+    <div th:replace="~{/fragments/hero.html :: bookHero}"></div>
+    <div th:replace="~{/fragments/gallery.html :: gallery}"></div>
 
-</div>
-<div th:replace="${main}"></div>
+    <div th:replace="${main}"></div>
+
+    <link rel="stylesheet" href="../../static/bootstrap/js/bootstrap.bundle.js"
+        th:href="@{/bootstrap/js/bootstrap.bundle.js}">
 </body>
 </html>
