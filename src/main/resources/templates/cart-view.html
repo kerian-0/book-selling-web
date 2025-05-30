@@ -4,7 +4,10 @@
 <body>
 <main role="main">
     <div class="container mt-5">
-        <table class="table table-striped table-bordered">
+        <div class="row">
+            <h4>Order Table</h4>
+        </div>
+        <table class="table table-striped table-bordered bg-info">
             <thead>
             <tr>
                 <th>Id</th>
@@ -20,7 +23,7 @@
                 <td th:text="'$'+${cartItem.price}"></td>
                 <td>
 
-                        <img class="rounded" height="30" width="30" th:src="@{'/images/'+${cartItem.imageUrl}+'.jpg'}"  alt="">
+                        <img class="rounded" height="30" width="30" th:src="@{'/images/books/'+${cartItem.imageUrl}}"  alt="">
 
                 </td>
 
@@ -37,7 +40,7 @@
         </div>
         <div class="row">
             <div class="col-md-8"></div>
-            <div class="col-md-2"><a th:href="@{/library/order-success}" class="btn btn-secondary">Checkout</a></div>
+            <div class="col-md-2"><a th:href="@{/order-success}" class="btn btn-secondary">Checkout</a></div>
         </div>
     </div>
 </main>

@@ -32,14 +32,14 @@ public class SecurityConfig {
         http.formLogin( c ->{
             c.loginPage("/login")
                     .permitAll();
-            c.defaultSuccessUrl("/library/books");
+            c.defaultSuccessUrl("/home");
         });
         http.authorizeHttpRequests( c ->{
-            c.requestMatchers("/register").permitAll();
+            c.requestMatchers("/register","/bootstrap/**","/images/books/**","/cover/**").permitAll();
             c.anyRequest().authenticated();
         });
         http.logout( c ->{
-            c.logoutUrl("/logout").logoutSuccessUrl("/home");
+            c.logoutUrl("/logout").logoutSuccessUrl("/login");
 
 
 

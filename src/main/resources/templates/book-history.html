@@ -5,7 +5,7 @@
 <main role="main">
     <div class="container mt-4">
         <h4>Order Tables</h4>
-        <table class="table-bordered table-striped">
+        <table class="table table-bordered table-striped bg-info">
             <thead>
               <tr>
                   <th>Id</th>
@@ -15,11 +15,11 @@
               </tr>
             </thead>
             <tbody>
-            <tr th:each="b : ${bookOrders}">
-                <td th:text="${b.id}"></td>
-                <td th:text="${b.username}"></td>
-                <td th:text="${b.bookName}"></td>
-                <td th:text="${#temporals.format(b.date, 'yyyy-MM-dd')}"></td>
+            <tr th:each="order: ${orderItems}">
+                <td th:text="${order.id}"></td>
+                <td th:text="${order.username}"></td>
+                <td th:text="${order.bookName}"></td>
+                <td th:text="${#temporals.format(order.date, 'yyyy-MM-dd')}"></td>
             </tr>
 
             </tbody>

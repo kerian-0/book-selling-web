@@ -1,10 +1,13 @@
 package org.example.booksellingweb.service;
 
+import org.example.booksellingweb.ds.BookUserInfo;
 import org.example.booksellingweb.ds.CartItem;
 import org.example.booksellingweb.entity.Book;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -24,6 +27,8 @@ public class CartItemService {
     }
 
     private CartItem toCartItem(Book book) {
-        return new CartItem(book.getId(),book.getBookName(),book.getImageUrl(),book.getPrice());
+        return new CartItem(book.getId(),book.getAuthor(),book.getPrice(),book.getImageUrl());
     }
+
+
 }

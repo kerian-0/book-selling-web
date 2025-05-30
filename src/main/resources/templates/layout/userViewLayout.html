@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html th:fragment="layout(main)" lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,6 +8,8 @@
           th:href="@{/bootstrap/css/bootstrap.min.css}">
     <link rel="stylesheet" href="../../static/bootstrap/css/App.css"
         th:href="@{/bootstrap/css/App.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <div th:replace="~{fragments/navbar.html :: navbar}"></div>

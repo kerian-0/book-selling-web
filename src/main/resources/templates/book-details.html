@@ -7,30 +7,33 @@
          <div class="row">
              <div class="col-md-10"></div>
              <div class="col-md-2">
-                 <a th:href="@{/library/view-cart}">
-                     <span><i class="fa-solid fa-cart-shopping btn-secondary"></i> <span th:if="${!#lists.isEmpty(cartItem)}" class="mx-2" th:text="${cartItem.size()}"></span></span>
-
+                 <a th:href="@{/view-cart}" class="cart-link">
+    <span class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span th:if="${!#lists.isEmpty(cartItem)}" class="cart-count" th:text="${cartItem.size()}"></span>
+    </span>
                  </a>
+
+
              </div>
          </div>
          <div class="row">
              <div class="col-md-8 mt-5">
-                 <h4 th:text="${bookDetails.authorName}"></h4>
-                 <span class="lead" th:text="${bookDetails.bookName}"></span>
+                 <span class="lead" th:text="${book.title}"></span>
                  <div>
-                     <a th:href="@{'/library/add-to-cart?id='+${bookDetails.id}}" class="btn btn-secondary">Add To Cart</a>
-                     <a th:href="@{/library/books}" class="btn btn-secondary">More</a>
+                     <a th:href="@{'/add-to-cart?id='+${book.id}}" class="btn btn-secondary">Add To Cart</a>
+                     <a th:href="@{/gallery}" class="btn btn-secondary">More</a>
                  </div>
 
              </div>
              <div class="col-md-4">
                  <div class="card px-5">
-                     <img height="300" th:src="@{'/images/'+${bookDetails.imageUrl}+'.jpg'}" alt="">
+                     <img  th:src="@{'/images/books/'+${book.imageUrl}}" alt="">
                  </div>
              </div>
          </div>
          <div class="row">
-             <span th:text="${bookDetails.description}"></span>
+             <span th:text="${book.description}"></span>
          </div>
      </div>
  </main>

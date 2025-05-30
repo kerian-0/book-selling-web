@@ -12,7 +12,7 @@ public class CartItem {
     private double price;
 
 
-    public CartItem(Long id, String imageUrl, String bookName, double price) {
+    public CartItem(Long id,  String bookName, double price,String imageUrl) {
         this.id = id;
         this.bookName = bookName;
         this.imageUrl = imageUrl;

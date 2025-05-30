@@ -10,7 +10,7 @@ import java.util.List;
 public interface BookUserDao extends JpaRepository<BookUserOrder, Long> {
 
 @Query("""
-    select new org.example.booksellingweb.ds.BookUserInfo(bo.id, b.bookName, u.username, bo.date)
+    select new org.example.booksellingweb.ds.BookUserInfo(bo.id, b.title, u.username, bo.date)
     from Book b join b.bookUserOrders bo join bo.user u where u.username = ?1
             """)
 List<BookUserInfo> findByUsername(String username);
